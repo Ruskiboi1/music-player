@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Web Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Tabs -->
+    <header>
+        <button id="nav-all" class="tab-btn active" onclick="switchTab('all')">All Songs</button>
+        <button id="nav-saved" class="tab-btn" onclick="switchTab('saved')">Saved Songs (<span id="saved-count">0</span>)</button>
+    </header>
+
+    <!-- Main Song Display Lists -->
+    <main>
+        <div id="song-list" class="grid-container"></div>
+    </main>
+
+    <!-- Fixed Bottom Audio Player -->
+    <footer class="player-bar">
+        <div class="track-info">
+            <img id="player-art" src="https://via.placeholder.com/60" alt="Cover Art">
+            <div>
+                <h4 id="player-title">Select a song</h4>
+                <p id="player-artist">--</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button onclick="prevSong()">⏮ Prev</button>
+            <button id="play-btn" onclick="togglePlay()">▶ Play</button>
+            <button onclick="nextSong()">Next ⏭</button>
+        </div>
+    </footer>
+
+    <!-- Hidden HTML5 Audio Element -->
+    <audio id="audio-engine"></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
